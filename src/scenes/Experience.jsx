@@ -1,5 +1,4 @@
-import { Environment, Float } from "@react-three/drei";
-import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
+import { Float } from "@react-three/drei";
 
 import FloatingPortrait from "./FloatingPortrait";
 import CameraRig from "./CameraRig";
@@ -7,58 +6,55 @@ import CameraRig from "./CameraRig";
 export default function Experience() {
   return (
     <>
-      <color attach="background" args={["#050505"]} />
+      {/* Main Background */}
+      <color attach="background" args={["#000000"]} />
 
-      <fog attach="fog" args={["#050505", 8, 20]} />
-
-      <ambientLight intensity={1.2} />
+      {/* Lighting */}
+      <ambientLight intensity={0.45} />
 
       <directionalLight
         position={[5, 5, 5]}
-        intensity={2}
+        intensity={1.2}
         color="#ffffff"
       />
 
       <pointLight
-        position={[-3, 2, 2]}
-        intensity={15}
-        color="#8ab4ff"
+        position={[4, 1, 2]}
+        intensity={10}
+        color="#3b82f6"
       />
 
+      <pointLight
+        position={[-4, 2, 1]}
+        intensity={4}
+        color="#ffffff"
+      />
+
+      {/* Portrait */}
       <Float
-        speed={2}
-        rotationIntensity={0.2}
-        floatIntensity={1}
+        speed={1.5}
+        rotationIntensity={0.05}
+        floatIntensity={0.3}
       >
         <FloatingPortrait />
       </Float>
 
-      <mesh position={[0, -3, -5]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[50, 50]} />
+      {/* Ground */}
+      <mesh
+        position={[0, -3.5, -8]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      >
+        <planeGeometry args={[100, 100]} />
+
         <meshStandardMaterial
-          color="#0a0a0a"
-          metalness={0.3}
-          roughness={0.8}
+          color="#050505"
+          roughness={1}
+          metalness={0}
         />
       </mesh>
 
-      <Environment preset="city" />
-
+      {/* Camera Motion */}
       <CameraRig />
-
-      <EffectComposer>
-        <Bloom
-          intensity={0.6}
-          luminanceThreshold={0.2}
-          luminanceSmoothing={0.9}
-        />
-
-        <Vignette
-          eskil={false}
-          offset={0.2}
-          darkness={1.1}
-        />
-      </EffectComposer>
     </>
   );
 }

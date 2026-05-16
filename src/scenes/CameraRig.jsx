@@ -1,36 +1,16 @@
-import { useFrame } from "@react-three/fiber";
-import { useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 
 export default function CameraRig() {
-  const { camera } = useThree();
+  const { camera, mouse } = useThree();
 
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-
+  useFrame(() => {
     camera.position.x +=
-      ((state.mouse.x * 0.4) - camera.position.x) * 0.03;
+      (mouse.x * 0.2 - camera.position.x) * 0.02;
 
     camera.position.y +=
-      ((state.mouse.y * 0.25) - camera.position.y) * 0.03;
+      (mouse.y * 0.1 - camera.position.y) * 0.02;
 
-    camera.position.z = 7 - scrollY * 0.0015;
-
-    camera.rotation.y = Math.sin(time * 0.2) * 0.02;
+    camera.lookAt(0, 0, 0);
   });
 
   return null;
