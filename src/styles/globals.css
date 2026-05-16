@@ -30,7 +30,9 @@ body {
   position: relative;
   width: 100%;
   min-height: 200vh;
-  overflow: hidden;
+
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* Background Video */
@@ -647,4 +649,128 @@ body {
   justify-content: center;
 
   padding: 120px 24px;
+}
+
+.skills-section {
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding-right: 10vw;
+
+  background: #000;
+}
+
+.skills-piano-layer {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.piano-image {
+  position: absolute;
+
+  left: -18%;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    scaleX(-1)
+    rotate(-4deg)
+    scale(1.45);
+
+  height: 150vh;
+
+  object-fit: contain;
+
+  opacity: 0.92;
+
+  filter:
+    grayscale(1)
+    contrast(1.12)
+    brightness(1);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.skills-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  right: -350px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(70, 100, 255, 0.14) 0%,
+    rgba(70, 100, 255, 0.08) 35%,
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.skills-content {
+  position: relative;
+
+  width: 50%;
+
+  margin-right: 5vw;
+  margin-left: auto;
+
+  transform: translateX(8vw);
+
+  z-index: 5;
+}
+
+.section-label {
+  font-size: 0.9rem;
+
+  letter-spacing: 6px;
+
+  color: rgba(255,255,255,0.55);
+
+  margin-bottom: 2rem;
+}
+
+.skills-content h2 {
+  font-size: clamp(4rem, 9vw, 8rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -5px;
+
+  margin-bottom: 2rem;
+}
+
+.skills-description {
+  max-width: 650px;
+
+  font-size: 1.15rem;
+
+  line-height: 2;
+
+  color: rgba(255,255,255,0.68);
 }
