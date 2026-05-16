@@ -1,12 +1,14 @@
+import lenis from "../lib/lenis";
+
 export default function Navbar() {
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
+    const element =
+      document.getElementById(id);
 
-    if (!section) return;
+    if (!element) return;
 
-    window.scrollTo({
-      top: section.offsetTop,
-      behavior: "smooth",
+    lenis.scrollTo(element, {
+      duration: 1.8,
     });
   };
 
