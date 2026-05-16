@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: #050505;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  cursor: default;
+}
+
+canvas {
+  touch-action: none;
+}
+
+.app-container {
+  width: 100%;
+  position: relative;
+}
+
+.canvas-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.html-layer {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section {
+  width: 100%;
+  min-height: 200vh;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(138, 180, 255, 0.08),
+      transparent 40%
+    );
+}
+
+.hero-layout {
+  width: 100%;
+  max-width: 1400px;
+  padding-inline: 7vw;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.hero-tag {
+  font-size: 0.85rem;
+  letter-spacing: 0.35rem;
+  color: #8f8f8f;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 11vw, 9rem);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  max-width: 550px;
+  color: #9f9f9f;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: white;
+  color: black;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.18);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  color: #7c7c7c;
+  font-size: 0.7rem;
+  letter-spacing: 0.3rem;
+}
+.scroll-line {
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(to bottom, white, transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+.dummy-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+}
+
+.dummy-content {
+  text-align: center;
+}
+
+.dummy-content h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
+}
+
+.dummy-content p {
+  color: #888;
+}
+
+@keyframes scrollPulse {
+  0% {
+    opacity: 0.2;
+    transform: scaleY(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: scaleY(0.6);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    padding-top: 8rem;
+  }
+
+  .hero-title {
+    letter-spacing: -0.15rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+}
