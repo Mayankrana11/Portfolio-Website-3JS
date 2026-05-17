@@ -6,7 +6,7 @@ export default function SkillsSection() {
     "JavaScript / TypeScript",
 
     "Python • C • C++",
-    "React • Next.js • Node.js",
+    "React • Next.js • Next.js • Node.js",
     "Firebase • MySQL • Supabase",
 
     "OCR • NLP • Hugging Face",
@@ -29,15 +29,13 @@ export default function SkillsSection() {
         <p className="section-label">SKILLS</p>
 
         <h2>
-          Technologies
+          Tools &
           <br />
-          & Tools
+          Technologies
         </h2>
 
         <p className="skills-description">
-          I approach development like composition — balancing structure,
-          rhythm, interaction, and emotion to create immersive digital
-          experiences.
+        Like a composer layering harmonies, I balance structural precision with interactive rhythm to bring digital experiences to life.
         </p>
 
         <div className="skills-grid-new">
