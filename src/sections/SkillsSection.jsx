@@ -5,12 +5,12 @@ export default function SkillsSection() {
     "Java • Object Oriented Programming",
     "JavaScript / TypeScript",
 
-    "Python • C • C++",
-    "React • Next.js • Next.js • Node.js",
+    "Python • C / C++",
+    "React • Next.js • Three.js • Node.js",
     "Firebase • MySQL • Supabase",
 
     "OCR • NLP • Hugging Face",
-    "Vercel • Netlify • Render",
+    "Vercel • Netlify • Render • Railway",
     "UE5 • After Effects • Premiere Pro • Filmora • Figma",
   ];
 

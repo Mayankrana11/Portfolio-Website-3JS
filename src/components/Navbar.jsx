@@ -1,14 +1,14 @@
 import lenis from "../lib/lenis";
 
 export default function Navbar() {
-  const scrollToSection = (id) => {
-    const element =
-      document.getElementById(id);
+  const scrollToSection = (id, offset = 0) => {
+    const element = document.getElementById(id);
 
     if (!element) return;
 
     lenis.scrollTo(element, {
       duration: 1.8,
+      offset,
     });
   };
 
@@ -21,13 +21,13 @@ export default function Navbar() {
       </button>
 
       <button
-        onClick={() => scrollToSection("skills")}
+        onClick={() => scrollToSection("skills", 120)}
       >
         Skills
       </button>
 
       <button
-        onClick={() => scrollToSection("experience")}
+        onClick={() => scrollToSection("experience", 200)}
       >
         Experience
       </button>
