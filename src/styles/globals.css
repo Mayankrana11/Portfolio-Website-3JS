@@ -647,13 +647,13 @@ body {
 }
 
 .contact-section {
-  min-height: 100vh;
+  min-height: auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 120px 24px;
+  padding: 40px 24px 120px;
 }
 
 .skills-section {
@@ -1088,11 +1088,8 @@ body {
 
 .projects-section {
   position: relative;
-
-  padding: 40px 0 140px 0;
-
+  padding: 40px 0 40px 0;
   overflow: hidden;
-
   background: #000;
 }
 
