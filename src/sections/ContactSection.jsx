@@ -51,6 +51,37 @@ export default function ContactSection() {
           </button>
 
         </form>
+        <div className="contact-socials">
+
+        <a
+          href="https://github.com/Mayankrana11"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-link"
+        >
+          <i className="devicon-github-original"></i>
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/mayank-rana-101355322/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-link"
+        >
+          <i className="devicon-linkedin-plain"></i>
+          LinkedIn
+        </a>
+
+        <a
+          href="mailto:work.mayankrana11@gmail.com"
+          className="social-link"
+        >
+          <i className="devicon-google-plain"></i>
+          Email
+        </a>
+
+</div>
       </div>
     </section>
   );
