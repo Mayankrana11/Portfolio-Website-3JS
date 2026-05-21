@@ -187,6 +187,13 @@ export default function ProjectsSection() {
       id="projects"
       className="projects-section"
     >
+      <div className="projects-bg-layer">
+        <img
+          src="/images/background.png"
+          alt=""
+          className="projects-bg-image"
+        />
+    </div>
       <div className="projects-header">
         <p className="section-label">
           PROJECTS
