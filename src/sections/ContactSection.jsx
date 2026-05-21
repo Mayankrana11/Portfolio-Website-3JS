@@ -1,12 +1,23 @@
 export default function ContactSection() {
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className="contact-section"
+    >
+      <div className="contact-bg-layer">
+        <img
+          src="/images/contact.png"
+          alt=""
+          className="contact-japan-bg"
+        />
+      </div>
+
       <div className="contact-card">
         <h2>Get In Touch</h2>
 
         <p>
-          I'm currently open to new opportunities and
-          interesting projects.
+          I'm currently open to new opportunities
+          and interesting projects.
         </p>
 
         <form
@@ -38,6 +49,7 @@ export default function ContactSection() {
           <button type="submit">
             Send Message
           </button>
+
         </form>
       </div>
     </section>
